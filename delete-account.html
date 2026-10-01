@@ -240,16 +240,13 @@ footer{max-width:820px;margin:18px auto 0;color:#707070;font-size:.9rem;text-ali
       codeEl.focus();
       startCooldown(60);
     } catch (error) {
-      console.error(error);
+      console.error('OTP send failed:', error);
 
-      // Generic response prevents account-email enumeration.
-      codeArea.classList.remove('hidden');
       setStatus(
         sendStatus,
-        'If this email belongs to an existing RowStrength account, check your inbox. If no code arrives, verify the email and try again.',
-        'success'
+        'Error: ' + (error?.message || String(error)),
+        'error'
       );
-      startCooldown(60);
     } finally {
       sendCodeBtn.disabled = false;
     }
