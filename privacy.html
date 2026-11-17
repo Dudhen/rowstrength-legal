@@ -25,13 +25,20 @@ footer{max-width:860px;margin:18px auto 0;color:#707070;font-size:.9rem;text-ali
  .meta,footer{color:#aaa}
  a{color:#b9a9ff}
 }
+
+/* RowStrength: background and compact language selector only. */
+body{min-height:100vh;background:linear-gradient(133deg,#e1d0ff 0%,#f7f0ff 52%,#eee2ff 100%) fixed}
+.rs-language{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:0 0 9px;font-size:.84rem;color:#5c4a7a}
+.rs-language select{font:inherit;border:1px solid #d6c7f5;border-radius:8px;padding:5px 8px;background:#fff;color:#392452}
+@media(prefers-color-scheme:dark){.rs-language{color:#ddd1f7}.rs-language select{background:#2c2935;color:#fff;border-color:#51476f}}
 </style>
 </head>
-<body>
+<body data-rs-page="privacy">
 <main>
   <article>
-    <h1>Privacy Policy for RowStrength</h1>
-    <p class="meta"><strong>Effective date:</strong> October 31, 2026</p>
+    <div class="rs-language"><label for="rs-language" data-rs-i18n="language">Language</label><select id="rs-language" aria-label="Site language"><option value="ru">RU</option><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option><option value="es">ES</option></select></div>
+    <h1 data-rs-i18n="legalTitle">Privacy Policy for RowStrength</h1>
+    <p class="meta" data-rs-i18n="effectiveDate"><strong>Effective date:</strong> October 31, 2026</p>
     <p>RowStrength is developed and operated by <strong>Arsenii Dudchenko</strong> (“we”, “us”, or “our”).</p>
     <p>This Privacy Policy explains what information RowStrength processes, why it is processed, how it is stored, which service providers may receive it, and what choices and rights users have.</p>
     <p>For privacy-related questions or requests, contact: <a href="mailto:arseny.dudchenko1998@gmail.com">arseny.dudchenko1998@gmail.com</a>.</p>
@@ -83,5 +90,6 @@ footer{max-width:860px;margin:18px auto 0;color:#707070;font-size:.9rem;text-ali
   </article>
   <footer>© 2026 Arsenii Dudchenko · RowStrength</footer>
 </main>
+<script src="i18n.js" defer></script>
 </body>
 </html>
